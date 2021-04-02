@@ -13,3 +13,8 @@ button.onclick = () => player.togglePlay();
 
 const buttonMute = document.querySelector('#buttonMute');
 buttonMute.onclick = () => player.toggleMute();
+
+// Valida que el navegador tenga el feature serviceWorker
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/sw.js').catch(err => console.log(err.message))
+}

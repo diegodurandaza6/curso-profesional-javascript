@@ -5,9 +5,9 @@ class AutoPause{
         this.handlerVisibilityChange = this.handlerVisibilityChange.bind(this)
     }
     run(player){
-        console.log('RUN PLUGIN');
+        //console.log('RUN PLUGIN');
         this.player = player;
-        console.log(this.player);
+        //console.log(this.player);
         const observer = new IntersectionObserver(this.handlerIntersection, {
             threshold: this.threshold,
         });
@@ -19,7 +19,7 @@ class AutoPause{
 
     handlerIntersection(entries){
         const entry = entries[0];
-        console.log(this);
+        //console.log(this);
 
         entry.intersectionRatio >= this.threshold ? this.player.play() : this.player.media.pause()
     }
